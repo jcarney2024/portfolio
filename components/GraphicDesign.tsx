@@ -9,15 +9,26 @@ const images = [1, 2, 3, 4, 5, 6, 7, 8, 10, 11].map(
   (n) => `/images/ymunk/${n}.png`
 );
 
-const merchImages = [
-  { src: "/images/merch/IMG_2889.png", alt: "YMUNE XV crewneck — Rome illustration" },
-  { src: "/images/merch/IMG_4657.png", alt: "YMUNE XV crewneck — YV monogram" },
-  { src: "/images/merch/IMG_3525.png", alt: "YMUNE XV tee — I Love Roma" },
-  { src: "/images/merch/IMG_9256.png", alt: "YMUNE XV sweatpants" },
+const merchItems = [
+  {
+    thumb: "/images/merch/IMG_4657.png",
+    alt: "YMUNE XV crewneck",
+    lightbox: ["/images/merch/IMG_4657.png", "/images/merch/IMG_2889.png"],
+  },
+  {
+    thumb: "/images/merch/IMG_3525.png",
+    alt: "YMUNE XV tee — I Love Roma",
+    lightbox: ["/images/merch/IMG_3525.png"],
+  },
+  {
+    thumb: "/images/merch/IMG_9256.png",
+    alt: "YMUNE XV sweatpants",
+    lightbox: ["/images/merch/IMG_9256.png"],
+  },
 ];
 
 export default function GraphicDesign() {
-  const [lightboxSrc, setLightboxSrc] = useState<string | null>(null);
+  const [lightboxImages, setLightboxImages] = useState<string[] | null>(null);
 
   return (
     <section id="design" className="py-24 px-6 max-w-6xl mx-auto">
@@ -42,7 +53,7 @@ export default function GraphicDesign() {
             viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 0.5, delay: i * 0.05 }}
             className="cursor-pointer group"
-            onClick={() => setLightboxSrc(src)}
+            onClick={() => setLightboxImages([src])}
           >
             <div className="relative overflow-hidden rounded-lg">
               <Image
@@ -71,24 +82,24 @@ export default function GraphicDesign() {
         </p>
       </motion.div>
 
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-        {merchImages.map((item, i) => (
+      <div className="grid grid-cols-3 gap-4">
+        {merchItems.map((item, i) => (
           <motion.div
-            key={item.src}
+            key={item.thumb}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 0.5, delay: i * 0.05 }}
             className="cursor-pointer group"
-            onClick={() => setLightboxSrc(item.src)}
+            onClick={() => setLightboxImages(item.lightbox)}
           >
             <div className="relative aspect-square overflow-hidden rounded-lg bg-[#141414]">
               <Image
-                src={item.src}
+                src={item.thumb}
                 alt={item.alt}
                 fill
                 className="object-cover transition-transform duration-300 group-hover:scale-105"
-                sizes="(max-width: 768px) 50vw, 25vw"
+                sizes="(max-width: 768px) 50vw, 33vw"
               />
             </div>
           </motion.div>
@@ -119,7 +130,7 @@ export default function GraphicDesign() {
         </div>
       </motion.div>
 
-      <Lightbox src={lightboxSrc} onClose={() => setLightboxSrc(null)} />
+      <Lightbox images={lightboxImages} onClose={() => setLightboxImages(null)} />
     </section>
   );
 }
