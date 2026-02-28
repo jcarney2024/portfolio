@@ -9,6 +9,13 @@ const images = [1, 2, 3, 4, 5, 6, 7, 8, 10, 11].map(
   (n) => `/images/ymunk/${n}.png`
 );
 
+const merchImages = [
+  { src: "/images/merch/IMG_2889.png", alt: "YMUNE XV crewneck — Rome illustration" },
+  { src: "/images/merch/IMG_4657.png", alt: "YMUNE XV crewneck — YV monogram" },
+  { src: "/images/merch/IMG_3525.png", alt: "YMUNE XV tee — I Love Roma" },
+  { src: "/images/merch/IMG_9256.png", alt: "YMUNE XV sweatpants" },
+];
+
 export default function GraphicDesign() {
   const [lightboxSrc, setLightboxSrc] = useState<string | null>(null);
 
@@ -44,6 +51,44 @@ export default function GraphicDesign() {
                 width={600}
                 height={800}
                 className="w-full h-auto transition-transform duration-300 group-hover:scale-105"
+              />
+            </div>
+          </motion.div>
+        ))}
+      </div>
+
+      {/* YMUNE XV Merchandise */}
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 0.6 }}
+        className="mt-20"
+      >
+        <h3 className="text-2xl font-bold mb-2">Merchandise</h3>
+        <p className="text-[#a0a0a0] mb-8">
+          YMUN Europe XV — Apparel Design
+        </p>
+      </motion.div>
+
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+        {merchImages.map((item, i) => (
+          <motion.div
+            key={item.src}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.5, delay: i * 0.05 }}
+            className="cursor-pointer group"
+            onClick={() => setLightboxSrc(item.src)}
+          >
+            <div className="relative aspect-square overflow-hidden rounded-lg bg-[#141414]">
+              <Image
+                src={item.src}
+                alt={item.alt}
+                fill
+                className="object-cover transition-transform duration-300 group-hover:scale-105"
+                sizes="(max-width: 768px) 50vw, 25vw"
               />
             </div>
           </motion.div>
