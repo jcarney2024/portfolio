@@ -26,7 +26,7 @@ export default function GraphicDesign() {
         </p>
       </motion.div>
 
-      <div className="columns-2 md:columns-3 gap-4 space-y-4">
+      <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
         {images.map((src, i) => (
           <motion.div
             key={src}
@@ -34,7 +34,7 @@ export default function GraphicDesign() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 0.5, delay: i * 0.05 }}
-            className="break-inside-avoid cursor-pointer group"
+            className="cursor-pointer group"
             onClick={() => setLightboxSrc(src)}
           >
             <div className="relative overflow-hidden rounded-lg">
