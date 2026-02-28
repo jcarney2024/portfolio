@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const experience = [
   { role: "IT & Communications Director", org: "HAVEN Free Clinic" },
@@ -44,6 +45,15 @@ export default function About() {
           transition={{ duration: 0.5 }}
           className="space-y-6"
         >
+          <div className="relative w-40 h-40 rounded-full overflow-hidden mb-2">
+            <Image
+              src="/images/headshot.jpg"
+              alt="Jack Carney"
+              fill
+              className="object-cover"
+              sizes="160px"
+            />
+          </div>
           <p className="text-lg text-[#a0a0a0] leading-relaxed">
             I&apos;m Jack Carney — a graphic designer and web developer at Yale
             University studying Computer Science and Economics. I build

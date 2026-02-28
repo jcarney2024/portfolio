@@ -42,7 +42,10 @@ next-env.d.ts
 
 # screenshots
 *.png
+*.jpg
 !/public/**/*.png
+!/app/icon.png
+!/public/**/*.jpg
 
 # claude/playwright
 .claude/
