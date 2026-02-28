@@ -6,7 +6,7 @@ import Image from "next/image";
 const experience = [
   { role: "IT & Communications Director", org: "HAVEN Free Clinic" },
   { role: "Director of Operations", org: "Design for America at Yale" },
-  { role: "USG Operations", org: "Yale Model United Nations Europe" },
+  { role: "USG of Branding", org: "Yale Model United Nations Europe" },
   { role: "Student Developer", org: "Yale Computer Society" },
 ];
 
