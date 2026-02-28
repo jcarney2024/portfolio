@@ -50,6 +50,30 @@ export default function GraphicDesign() {
         ))}
       </div>
 
+      {/* YMUN Europe XV Video */}
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 0.6 }}
+        className="mt-20"
+      >
+        <h3 className="text-2xl font-bold mb-2">Video</h3>
+        <p className="text-[#a0a0a0] mb-8">
+          YMUN Europe XV — 5-Minute Montage
+        </p>
+        <div className="relative w-full overflow-hidden rounded-xl border border-white/10" style={{ paddingBottom: "56.25%" }}>
+          <iframe
+            className="absolute inset-0 w-full h-full"
+            src="https://www.youtube.com/embed/eqy-SQDzLhE?si=ugrMJ4vhhfMl5qAI"
+            title="YMUN Europe XV Montage"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerPolicy="strict-origin-when-cross-origin"
+            allowFullScreen
+          />
+        </div>
+      </motion.div>
+
       <Lightbox src={lightboxSrc} onClose={() => setLightboxSrc(null)} />
     </section>
   );
