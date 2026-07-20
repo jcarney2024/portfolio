@@ -1,5 +1,6 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
+import Photography from "@/components/Photography";
 import GraphicDesign from "@/components/GraphicDesign";
 import WebProjects from "@/components/WebProjects";
 import About from "@/components/About";
@@ -14,6 +15,7 @@ export default function Home() {
       <Spotlight />
       <Navbar />
       <Hero />
+      <Photography />
       <GraphicDesign />
       <WebProjects />
       <About />
