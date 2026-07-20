@@ -49,7 +49,7 @@ export default function Hero() {
           Jack Carney
         </h1>
         <p className="relative text-xl md:text-2xl text-[#a0a0a0]">
-          Graphic Designer & Web Developer
+          Graphic Designer, Photographer & Web Developer
         </p>
       </motion.div>
     </section>
