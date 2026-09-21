@@ -11,22 +11,23 @@ const projects = [
     description: "Website for Design for America at Yale University",
   },
   {
-    url: "beta.havenfreeclinic.com",
+    url: "beta.havenfreeclinic.org",
     screenshot: "/images/projects/haven-beta.png",
-    title: "Haven Free Clinic (Beta)",
-    description: "Redesigned website for Haven Free Clinic",
+    title: "HAVEN Free Clinic",
+    description: "Redesigned website for HAVEN Free Clinic",
   },
   {
-    url: "hub.havenfreeclinic.com",
+    url: "hub.havenfreeclinic.org",
     screenshot: "/images/projects/haven-hub.png",
-    title: "Haven Free Clinic Hub",
-    description: "Internal hub for Haven Free Clinic operations",
+    title: "HAVEN Hub",
+    description: "Internal hub for HAVEN Free Clinic operations",
   },
   {
-    url: "updatemyinfo.havenfreeclinic.com",
-    screenshot: "/images/projects/haven-update.png",
-    title: "Haven Info Portal",
-    description: "Patient information update portal for Haven Free Clinic",
+    url: "yira.org",
+    screenshot: "/images/projects/yira.png",
+    title: "Yale International Relations Association",
+    description:
+      "Redesigned website for Yale International Relations Association",
   },
 ];
 

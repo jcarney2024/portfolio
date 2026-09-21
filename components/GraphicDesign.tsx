@@ -6,7 +6,7 @@ import Image from "next/image";
 import Lightbox from "./Lightbox";
 
 const ymunkImages = [1, 2, 3, 4, 6, 7, 8, 10, 11].map(
-  (n) => `/images/ymunk/${n}.png`
+  (n) => `/images/ymunk/${n}.png`,
 );
 
 const ymuneImages = [
@@ -80,7 +80,10 @@ const dfaImages = [
   {
     thumb: "/images/dfa/kickoff-slides.png",
     alt: "DFA Kickoff Meeting slides",
-    lightbox: ["/images/dfa/kickoff-slides.png", "/images/dfa/design-workshop.png"],
+    lightbox: [
+      "/images/dfa/kickoff-slides.png",
+      "/images/dfa/design-workshop.png",
+    ],
   },
   {
     thumb: "/images/dfa/autodesk.png",
@@ -109,17 +112,107 @@ export default function GraphicDesign() {
 
   return (
     <section id="design" className="py-24 px-6 max-w-6xl mx-auto">
-      {/* YMUNK XIV */}
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-100px" }}
         transition={{ duration: 0.6 }}
       >
-        <h2 className="text-4xl font-bold mb-2">Design</h2>
-        <p className="text-[#a0a0a0] mb-12">
-          YMUNK XIV — Yale Model United Nations Korea
-        </p>
+        <h2 className="text-4xl font-bold mb-12">Design</h2>
+      </motion.div>
+
+      {/* YMUN Australia spotlight */}
+      <motion.article
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 0.7 }}
+        className="relative isolate overflow-hidden rounded-[2rem] border border-white/10 bg-[#11130f] p-5 sm:p-8 md:p-10 lg:p-12"
+      >
+        <div
+          aria-hidden="true"
+          className="absolute -left-32 top-10 -z-10 h-80 w-80 rounded-full bg-[#f3d555]/10 blur-3xl"
+        />
+
+        <div className="grid gap-8 md:grid-cols-[1.15fr_0.85fr] md:items-end md:gap-14">
+          <div className="max-w-2xl">
+            <p className="mb-5 text-xs font-semibold uppercase tracking-[0.22em] text-[#e8cc58]"></p>
+            <h3 className="text-4xl font-bold leading-[0.95] tracking-[-0.04em] text-balance sm:text-5xl lg:text-6xl">
+              YMUN Australia
+            </h3>
+          </div>
+          <p className="max-w-md text-lg leading-relaxed text-[#c1c1bb] text-pretty md:pb-1">
+            Announcement graphics for YMUNA&apos;s inaugural conference in
+            Sydney, Australia.
+          </p>
+        </div>
+
+        <div className="mt-10 grid items-start gap-5 md:grid-cols-[2fr_1fr] md:gap-6">
+          <motion.button
+            type="button"
+            whileHover={{ scale: 1.01 }}
+            whileTap={{ scale: 0.99 }}
+            transition={{ duration: 0.25 }}
+            className="group block w-full cursor-zoom-in text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#e8cc58] focus-visible:ring-offset-4 focus-visible:ring-offset-[#11130f]"
+            onClick={() =>
+              setLightboxImages([
+                "/images/ymuna/ymun-australia-primary.png",
+                "/images/ymuna/ymun-australia.png",
+              ])
+            }
+            aria-label="View preferred YMUN Australia announcement concept full screen"
+          >
+            <div className="relative overflow-hidden rounded-xl bg-[#20231c] shadow-2xl shadow-black/40">
+              <Image
+                src="/images/ymuna/ymun-australia-primary.png"
+                alt="YMUN Australia announcement featuring a cable car over the Blue Mountains"
+                width={1080}
+                height={1440}
+                priority
+                className="h-auto w-full transition-transform duration-500 group-hover:scale-[1.015]"
+              />
+            </div>
+            <span className="mt-3 block text-xs font-medium tracking-wide text-[#b9bba4]"></span>
+          </motion.button>
+
+          <motion.button
+            type="button"
+            whileHover={{ scale: 1.01 }}
+            whileTap={{ scale: 0.99 }}
+            transition={{ duration: 0.25 }}
+            className="group block w-full cursor-zoom-in text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#e8cc58] focus-visible:ring-offset-4 focus-visible:ring-offset-[#11130f]"
+            onClick={() =>
+              setLightboxImages([
+                "/images/ymuna/ymun-australia.png",
+                "/images/ymuna/ymun-australia-primary.png",
+              ])
+            }
+            aria-label="View alternate YMUN Australia announcement concept full screen"
+          >
+            <div className="relative overflow-hidden rounded-xl bg-[#20231c] shadow-xl shadow-black/30">
+              <Image
+                src="/images/ymuna/ymun-australia.png"
+                alt="Alternate YMUN Australia announcement featuring Sydney Harbour"
+                width={1080}
+                height={1440}
+                className="h-auto w-full transition-transform duration-500 group-hover:scale-[1.015]"
+              />
+            </div>
+            <span className="mt-3 block text-xs tracking-wide text-[#777a72] transition-colors group-hover:text-[#b9bba4]"></span>
+          </motion.button>
+        </div>
+      </motion.article>
+
+      {/* YMUNK XIV */}
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 0.6 }}
+        className="mt-20"
+      >
+        <h3 className="text-2xl font-bold mb-2">YMUNK XIV</h3>
+        <p className="text-[#a0a0a0] mb-8">Yale Model United Nations Korea</p>
       </motion.div>
 
       <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
@@ -156,7 +249,7 @@ export default function GraphicDesign() {
       >
         <h3 className="text-2xl font-bold mb-2">Branding & Print</h3>
         <p className="text-[#a0a0a0] mb-8">
-          YMUN Europe XV — Logo, Announcements, Badges & Conference Materials
+          YMUN Europe XV: Logo, Announcements, Badges & Conference Materials
         </p>
       </motion.div>
 
@@ -171,7 +264,9 @@ export default function GraphicDesign() {
             className="cursor-pointer group"
             onClick={() => setLightboxImages(item.lightbox)}
           >
-            <div className={`relative aspect-square overflow-hidden rounded-lg ${item.bg || "bg-[#141414]"}`}>
+            <div
+              className={`relative aspect-square overflow-hidden rounded-lg ${item.bg || "bg-[#141414]"}`}
+            >
               <Image
                 src={item.thumb}
                 alt={item.alt}
@@ -193,9 +288,7 @@ export default function GraphicDesign() {
         className="mt-20"
       >
         <h3 className="text-2xl font-bold mb-2">Merchandise</h3>
-        <p className="text-[#a0a0a0] mb-8">
-          YMUN Europe XV — Apparel Design
-        </p>
+        <p className="text-[#a0a0a0] mb-8">YMUN Europe XV: Apparel Design</p>
       </motion.div>
 
       <div className="grid grid-cols-3 gap-4">
@@ -231,10 +324,11 @@ export default function GraphicDesign() {
         className="mt-20"
       >
         <h3 className="text-2xl font-bold mb-2">Video</h3>
-        <p className="text-[#a0a0a0] mb-8">
-          YMUN Europe XV — 5-Minute Montage
-        </p>
-        <div className="relative w-full overflow-hidden rounded-xl border border-white/10" style={{ paddingBottom: "56.25%" }}>
+        <p className="text-[#a0a0a0] mb-8">YMUN Europe XV: 5-Minute Montage</p>
+        <div
+          className="relative w-full overflow-hidden rounded-xl border border-white/10"
+          style={{ paddingBottom: "56.25%" }}
+        >
           <iframe
             className="absolute inset-0 w-full h-full"
             src="https://www.youtube.com/embed/eqy-SQDzLhE?si=ugrMJ4vhhfMl5qAI"
@@ -255,9 +349,7 @@ export default function GraphicDesign() {
         className="mt-20"
       >
         <h3 className="text-2xl font-bold mb-2">Design for America at Yale</h3>
-        <p className="text-[#a0a0a0] mb-8">
-          Event Flyers, Slides & Branding
-        </p>
+        <p className="text-[#a0a0a0] mb-8">Event Flyers, Slides & Branding</p>
       </motion.div>
 
       <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
@@ -284,7 +376,10 @@ export default function GraphicDesign() {
         ))}
       </div>
 
-      <Lightbox images={lightboxImages} onClose={() => setLightboxImages(null)} />
+      <Lightbox
+        images={lightboxImages}
+        onClose={() => setLightboxImages(null)}
+      />
     </section>
   );
 }

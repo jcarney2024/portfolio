@@ -6,7 +6,8 @@ import Image from "next/image";
 const experience = [
   { role: "IT & Communications Director", org: "HAVEN Free Clinic" },
   { role: "Director of Operations", org: "Design for America at Yale" },
-  { role: "USG of Branding", org: "Yale Model United Nations Europe" },
+  { role: "USG of Branding", org: "Yale Model United Nations Europe XV" },
+  { role: "USG of Branding", org: "Yale Model United Nations Korea XIV" },
   { role: "Student Developer", org: "Yale Computer Society" },
 ];
 
@@ -55,7 +56,7 @@ export default function About() {
             />
           </div>
           <p className="text-lg text-[#a0a0a0] leading-relaxed">
-            I&apos;m Jack Carney — a graphic designer and web developer at Yale
+            Hi! I am Jack Carney, a graphic designer and web developer at Yale
             University studying Computer Science and Economics. I build
             full-stack web applications and create visual identities for
             organizations I care about.
