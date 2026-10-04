@@ -1,8 +1,8 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
+import Photography from "@/components/Photography";
 import GraphicDesign from "@/components/GraphicDesign";
 import WebProjects from "@/components/WebProjects";
-import Photography from "@/components/Photography";
 import About from "@/components/About";
 import Footer from "@/components/Footer";
 import Spotlight from "@/components/Spotlight";
@@ -15,10 +15,10 @@ export default function Home() {
       <Spotlight />
       <Navbar />
       <Hero />
-      <GraphicDesign />
       <WebProjects />
-      <Photography />
       <About />
+      <GraphicDesign />
+      <Photography />
       <Footer />
     </main>
   );

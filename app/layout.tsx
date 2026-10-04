@@ -8,19 +8,20 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Jack Carney | Yale \u201928",
-  description: "Portfolio of Jack Carney - graphic design and web development",
+  title: "Jack Carney | Software Engineer \u00b7 Yale \u201928",
+  description:
+    "Jack Carney builds software for healthcare and community organizations, including HAVEN Hub, the volunteer platform for HAVEN Free Clinic. CS & Economics at Yale.",
   openGraph: {
-    title: "Jack Carney | Yale \u201928",
+    title: "Jack Carney | Software Engineer \u00b7 Yale \u201928",
     description:
-      "Portfolio of Jack Carney - graphic design and web development",
+      "Jack Carney builds software for healthcare and community organizations, including HAVEN Hub, the volunteer platform for HAVEN Free Clinic. CS & Economics at Yale.",
     images: [{ url: "/images/headshot.jpg", width: 1080, height: 1080 }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Jack Carney | Yale \u201928",
+    title: "Jack Carney | Software Engineer \u00b7 Yale \u201928",
     description:
-      "Portfolio of Jack Carney - graphic design and web development",
+      "Jack Carney builds software for healthcare and community organizations, including HAVEN Hub, the volunteer platform for HAVEN Free Clinic. CS & Economics at Yale.",
     images: ["/images/headshot.jpg"],
   },
 };

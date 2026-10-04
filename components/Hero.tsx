@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 export default function Hero() {
   return (
-    <section className="min-h-screen flex flex-col items-center justify-center px-6 relative overflow-hidden">
+    <section className="pt-32 md:pt-40 pb-12 md:pb-16 flex flex-col items-center justify-center px-6 relative overflow-hidden">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -48,9 +48,43 @@ export default function Hero() {
         <h1 className="relative text-6xl md:text-8xl font-bold tracking-tight mb-4">
           Jack Carney
         </h1>
-        <p className="relative text-xl md:text-2xl text-[#a0a0a0]">
-          Graphic Designer, Web Developer & Photographer
+        <p className="relative text-xl md:text-2xl text-[#fafafa] max-w-2xl mx-auto leading-snug">
+          Software engineer building tools for healthcare and community
+          organizations.
         </p>
+        <p className="relative mt-4 text-sm md:text-base text-[#a0a0a0]">
+          CS & Economics @ Yale &middot; Creator of{" "}
+          <a
+            href="#software"
+            className="text-[#d4a853] hover:text-[#e0b960] transition-colors"
+          >
+            HAVEN Hub
+          </a>
+        </p>
+        <div className="relative mt-8 flex flex-wrap items-center justify-center gap-3">
+          <a
+            href="#software"
+            className="px-5 py-2.5 bg-[#d4a853] text-[#0a0a0a] text-sm font-semibold rounded-lg hover:bg-[#e0b960] transition-colors"
+          >
+            View projects
+          </a>
+          <a
+            href="/resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-5 py-2.5 border border-white/15 text-sm font-semibold rounded-lg hover:border-[#d4a853]/60 hover:text-[#d4a853] transition-colors"
+          >
+            Resume
+          </a>
+          <a
+            href="https://github.com/jcarney2024"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-5 py-2.5 border border-white/15 text-sm font-semibold rounded-lg hover:border-[#d4a853]/60 hover:text-[#d4a853] transition-colors"
+          >
+            GitHub
+          </a>
+        </div>
       </motion.div>
     </section>
   );

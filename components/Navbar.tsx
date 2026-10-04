@@ -2,12 +2,18 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import {
+  GITHUB_URL,
+  LINKEDIN_URL,
+  GitHubIcon,
+  LinkedInIcon,
+} from "./SocialIcons";
 
 const navLinks = [
-  { label: "Design", href: "#design" },
-  { label: "Work", href: "#work" },
-  { label: "Photos", href: "#photos" },
+  { label: "Software", href: "#software" },
   { label: "About", href: "#about" },
+  { label: "Design", href: "#design" },
+  { label: "Photos", href: "#photos" },
   { label: "Contact", href: "#contact" },
 ];
 
@@ -44,7 +50,7 @@ export default function Navbar() {
             Jack Carney
           </a>
           {/* Desktop links */}
-          <div className="hidden md:flex gap-8">
+          <div className="hidden md:flex items-center gap-8">
             {navLinks.map((link) => (
               <a
                 key={link.href}
@@ -54,29 +60,69 @@ export default function Navbar() {
                 {link.label}
               </a>
             ))}
+            <div className="flex items-center gap-4 pl-6 border-l border-white/10">
+              <a
+                href={GITHUB_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#a0a0a0] hover:text-[#d4a853] transition-colors"
+                aria-label="GitHub"
+              >
+                <GitHubIcon size={18} />
+              </a>
+              <a
+                href={LINKEDIN_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#a0a0a0] hover:text-[#d4a853] transition-colors"
+                aria-label="LinkedIn"
+              >
+                <LinkedInIcon size={18} />
+              </a>
+            </div>
           </div>
-          {/* Mobile hamburger */}
-          <button
-            className="md:hidden flex flex-col gap-1.5 p-2"
-            onClick={() => setMobileOpen(!mobileOpen)}
-            aria-label="Toggle menu"
-          >
-            <span
-              className={`block w-6 h-0.5 bg-white transition-all duration-300 ${
-                mobileOpen ? "rotate-45 translate-y-2" : ""
-              }`}
-            />
-            <span
-              className={`block w-6 h-0.5 bg-white transition-all duration-300 ${
-                mobileOpen ? "opacity-0" : ""
-              }`}
-            />
-            <span
-              className={`block w-6 h-0.5 bg-white transition-all duration-300 ${
-                mobileOpen ? "-rotate-45 -translate-y-2" : ""
-              }`}
-            />
-          </button>
+          {/* Mobile: social links + hamburger */}
+          <div className="md:hidden flex items-center gap-3">
+            <a
+              href={GITHUB_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-2 text-[#a0a0a0] hover:text-[#d4a853] transition-colors"
+              aria-label="GitHub"
+            >
+              <GitHubIcon size={20} />
+            </a>
+            <a
+              href={LINKEDIN_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-2 text-[#a0a0a0] hover:text-[#d4a853] transition-colors"
+              aria-label="LinkedIn"
+            >
+              <LinkedInIcon size={20} />
+            </a>
+            <button
+              className="flex flex-col gap-1.5 p-2"
+              onClick={() => setMobileOpen(!mobileOpen)}
+              aria-label="Toggle menu"
+            >
+              <span
+                className={`block w-6 h-0.5 bg-white transition-all duration-300 ${
+                  mobileOpen ? "rotate-45 translate-y-2" : ""
+                }`}
+              />
+              <span
+                className={`block w-6 h-0.5 bg-white transition-all duration-300 ${
+                  mobileOpen ? "opacity-0" : ""
+                }`}
+              />
+              <span
+                className={`block w-6 h-0.5 bg-white transition-all duration-300 ${
+                  mobileOpen ? "-rotate-45 -translate-y-2" : ""
+                }`}
+              />
+            </button>
+          </div>
         </div>
       </nav>
 
