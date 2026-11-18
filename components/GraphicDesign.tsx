@@ -71,42 +71,6 @@ const merchItems = [
   },
 ];
 
-const dfaImages = [
-  {
-    thumb: "/images/dfa/y-design.png",
-    alt: "Design for America at Yale group photo",
-    lightbox: ["/images/dfa/y-design.png"],
-  },
-  {
-    thumb: "/images/dfa/kickoff-slides.png",
-    alt: "DFA Kickoff Meeting slides",
-    lightbox: [
-      "/images/dfa/kickoff-slides.png",
-      "/images/dfa/design-workshop.png",
-    ],
-  },
-  {
-    thumb: "/images/dfa/autodesk.png",
-    alt: "Autodesk Info Session flyer",
-    lightbox: ["/images/dfa/autodesk.png", "/images/dfa/autodesk-info.png"],
-  },
-  {
-    thumb: "/images/dfa/fusion-workshop.png",
-    alt: "Autodesk Fusion Workshop flyer",
-    lightbox: ["/images/dfa/fusion-workshop.png"],
-  },
-  {
-    thumb: "/images/dfa/fig-fries.png",
-    alt: "Fig & Fries — Figma Workshop",
-    lightbox: ["/images/dfa/fig-fries.png"],
-  },
-  {
-    thumb: "/images/dfa/final-showcase.png",
-    alt: "Final Showcase Invitation illustration",
-    lightbox: ["/images/dfa/final-showcase.png"],
-  },
-];
-
 export default function GraphicDesign() {
   const [lightboxImages, setLightboxImages] = useState<string[] | null>(null);
 
@@ -339,42 +303,6 @@ export default function GraphicDesign() {
           />
         </div>
       </motion.div>
-
-      {/* DFA Yale */}
-      <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: "-100px" }}
-        transition={{ duration: 0.6 }}
-        className="mt-20"
-      >
-        <h3 className="text-2xl font-bold mb-2">Design for America at Yale</h3>
-        <p className="text-[#a0a0a0] mb-8">Event Flyers, Slides & Branding</p>
-      </motion.div>
-
-      <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-        {dfaImages.map((item, i) => (
-          <motion.div
-            key={item.thumb}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-50px" }}
-            transition={{ duration: 0.5, delay: i * 0.05 }}
-            className="cursor-pointer group"
-            onClick={() => setLightboxImages(item.lightbox)}
-          >
-            <div className="relative aspect-square overflow-hidden rounded-lg bg-[#141414]">
-              <Image
-                src={item.thumb}
-                alt={item.alt}
-                fill
-                className="object-cover transition-transform duration-300 group-hover:scale-105"
-                sizes="(max-width: 768px) 50vw, 33vw"
-              />
-            </div>
-          </motion.div>
-        ))}
-      </div>
 
       <Lightbox
         images={lightboxImages}
